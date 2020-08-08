@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Game from './components/game/Game';
 
-function App() {
+
+
+function App(props) {
+  const panthers = {
+      name: "Strangerville Panthers",
+      logoSrc: "./assets/images/Pantherdunking.jpg"
+  }
+
+  const eagles = {
+      name: "Windenburg Eagles",
+      logoSrc: "./assets/images/eagle.jpg"
+  }
+
+  const bears = {
+    name: "Brindleton Bay Bears",
+    logoSrc: "./assets/images/Bear.jpg"
+}
+
+const elephants = {
+    name: "Newcrest Elephants",
+    logoSrc: "./assets/images/elephant.jpg"
+}
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="App">
+          <Game
+              venue="Union 525 Gem"
+              homeTeam={panthers}
+              visitingTeam={eagles}
+          />
+
+          <Game
+              venue="Sheridan Arena"
+              homeTeam={bears}
+              visitingTeam={elephants}
+          />
+      </div>
+  )
 }
 
 export default App;
